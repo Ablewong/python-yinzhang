@@ -1,5 +1,11 @@
 import cv2 as cv
 
+#设置 Y, X值
+yzY=410
+yzY1=yzY+124
+yzX=480
+yzX1=yzX+130
+
 def alpha2black_opencv2(img):
     width, height, channels = img.shape
 
