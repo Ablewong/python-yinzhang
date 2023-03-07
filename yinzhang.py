@@ -31,7 +31,7 @@ def read_img(path):
     bg = cv.imread("./test.png")
     print(bg)
     # 获取目标 roi
-    roi = bg[410:534, 480:610]
+    roi = bg[yzY:yzY1, yzX:yzX1]
     #cv.imshow("roi",roi)
     # 将印章与roi进行叠加
     mask = cv.cvtColor(ret, cv.COLOR_BGR2GRAY)
@@ -51,8 +51,9 @@ def read_img(path):
     print(replace_img.shape)
     # cv.imshow("bg", bg)
     # 第三步，将合成好的图片，送回到原图
-    bg[410:534, 480:610] = replace_img
+    bg[yzY:yzY1, yzX:yzX1] = replace_img
     cv.imshow("bg",bg)
+    #cv.imwrite("./bg.png",bg) #将合成图片另存为bg.png
 
 
 if __name__ == "__main__":
